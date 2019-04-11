@@ -1,0 +1,67 @@
+.about {
+
+    &__text {
+        min-height: 40rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        button {
+            align-self: flex-start;
+            margin-top: 2.5rem;
+        }
+
+        @include respond(phone-large) {
+            min-height: auto;
+            padding-bottom: 5rem;
+        }
+    }
+    &__heading {
+        text-transform: uppercase;
+        letter-spacing: .15rem;
+        padding-bottom: 1.5rem;
+        position: relative;
+
+        &:after {
+            position: absolute;
+            content: "";
+            height: 0.3rem;
+            width: 5rem;
+            bottom: 0;
+            left: 0;
+            background: #E3B505;
+        }
+    }
+    &__details {
+        margin-top: 2rem;
+    }
+    &__image {
+        min-height: 40rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-size: cover;
+        background-position: center;
+        background-image: url(../images/about/about-1.jpg);
+        position: relative;
+        z-index: 1;
+
+        &:after {
+            position: absolute;
+            content: "";
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, .2);
+            z-index: -1;
+        }
+
+        i {
+            font-size: 7.5rem;
+            color: #fff;
+            opacity: .8;
+            cursor: pointer;
+        }
+    }
+}

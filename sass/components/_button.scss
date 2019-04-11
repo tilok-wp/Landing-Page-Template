@@ -1,0 +1,33 @@
+button.button-primary {
+    border: none;
+    background: $color-primary;
+    color: #fff;
+    padding: 1rem 2.5rem;
+    border-radius: .3rem;
+    transition: .3s;
+
+    &:hover {
+        transform: translateY(-.2rem);
+    }
+}
+input.button-primary {
+    border: none;
+    background: $color-primary;
+    color: #fff;
+    padding: 1rem 2.5rem;
+    border-radius: .3rem;
+    transition: .3s;
+
+    &:hover {
+        transform: translateY(-.2rem);
+    }
+}
+
+a.theme-link {
+    color: $color-primary;
+    font-weight: 500;
+
+    &:hover {
+        color: $color-secondary;
+    }
+}

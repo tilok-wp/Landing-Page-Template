@@ -1,0 +1,393 @@
+.header-top {
+    background: $color-primary;
+    padding: .3rem 0;
+
+    @include respond(tab) {
+        font-size: 1.4rem;
+    } 
+    @include respond(phone-large) {
+        font-size: 1.2rem;
+    } 
+}
+
+
+.admin {
+    position: relative;
+
+    ul {
+        margin: 0;
+        padding: 0;
+
+        li {
+            display: inline-block;
+            list-style: none;
+            margin-right: 1rem;
+            position: relative;
+
+            &:after {
+                position: absolute;
+                content: "or";
+                color: $color-secondary;
+                top: 46%;
+                transform: translateY(-50%);
+            }
+
+            &:last-child {
+                margin-right: 0;
+
+                &::after {
+                    display: none;
+                }
+            }
+            &:first-child a {
+                padding-left: 0;
+            }
+
+            a {
+                display: inline-block;
+                color: #fff;
+                padding: .6rem 1rem;
+                transition: .3s;
+                font-weight: normal;
+
+                &:hover {
+                    text-decoration: none;
+                    color: $color-tertiary;
+                }
+            }
+        }
+    }
+}
+
+.social {
+    text-align: right;
+
+    ul {
+        margin: 0;
+        padding: 0;
+
+        li {
+            display: inline-block;
+            list-style: none;
+            margin-right: 1rem;
+
+            &:last-child {
+                margin-right: 0;
+            }
+
+            a {
+                display: inline-block;
+                color: #fff;
+                padding: .6rem;
+                transition: .3s;
+
+                &:hover {
+                    text-decoration: none;
+                    color: $color-tertiary;
+                }
+
+                @include respond(tab) {
+                    padding: 1rem .5rem;
+                }
+            }
+
+            @include respond(tab) {
+                margin-right: .5rem;
+            } 
+        }
+    }
+}
+
+.header-area {
+    position: absolute;
+    width: 100%;
+    background-color: RGBA( 0, 0, 0, .2);
+    z-index: 9;
+
+    @include respond(tab) {
+        background: #fff;
+    } 
+
+    .logo__img-fixed {
+        display: none;
+
+        @include respond(tab) {
+            display: block;
+        }
+    }
+
+    .logo__img-main {
+        @include respond(tab) {
+            display: none;
+        }
+    }
+
+    &.header-fixed {
+        position: fixed;
+        background: #fff;
+        left: 0;
+        top: 0;
+        width: 100%;
+        z-index: 99;
+        animation: 600ms ease-in-out 0s normal none 1 running fadeInDown;
+        border-bottom: $theme-border;
+
+        .logo__img-main {
+            display: none;
+        }
+        .logo__img-fixed {
+            display: block;
+        }
+    }
+}
+
+.logo {
+    height: 8.5rem;
+    display: flex;
+    align-items: center;
+
+    a {
+        color: #fff;
+
+        &:hover {
+            text-decoration: none;
+        }
+
+        img {
+            height: 4rem;
+        }
+        h1 {
+            font-size: 4rem;
+            color: #fff;
+            text-transform: uppercase;
+        }
+    }
+}
+
+.main-menu {
+    text-align: right;
+
+    ul {
+        margin: 0;
+        padding: 0;
+
+        li {
+            list-style: none;
+            display: inline-block;
+            margin-right: 4rem;
+
+            &.active a {
+                color: $color-primary;
+
+                &:after {
+                    left: 0;
+                    opacity: 1;
+                }
+            }
+
+            &:last-child {
+                margin-right: 0;
+            }
+
+            a {
+                padding: 3rem 0;
+                display: inline-block;
+                text-transform: uppercase;
+                color: #fff;
+                position: relative;
+                transition: .5s;
+                font-weight: normal;
+
+                &:after {
+                    position: absolute;
+                    content: "";
+                    width: 100%;
+                    height: .4rem;
+                    background: $color-primary;
+                    bottom: -.1rem;
+                    left: -2rem;
+                    transition: .5s;
+                    opacity: 0;
+                }
+
+                &:hover {
+                    text-decoration: none;
+                    color: $color-primary;
+
+                    &:after {
+                        left: 0;
+                        opacity: 1;
+                    }
+                }
+                &:focus {
+                    text-decoration: none;
+                }
+            }
+
+            &.dropdown {
+                position: relative;
+                text-align: left;
+
+                ul {
+                    position: absolute;
+                    width: 16rem;
+                    background: #fff;
+                    padding: .5rem 0;
+                    left: 0;
+                    top: 100%;
+                    transition: .3s;
+                    transform: scaleY(0);
+                    transform-origin: top;
+
+                    li {
+                        margin: 0;
+                        padding: 0;
+                        display: block;
+
+                        a {
+                            color: $heading-font-color;
+                            padding: 1rem 1.5rem;
+
+                            &:after {
+                                display: none;
+                            }
+
+                            &:hover {
+                                color: $color-primary;
+                            }
+                        }
+                    }
+                }
+
+                &:hover ul {
+                    transform: scaleY(1);
+                }
+            }
+        }
+    }
+
+}
+
+.header-fixed .main-menu ul li a {
+    color: #333;
+}
+
+.menu-main {
+    display: block;
+
+    @include respond(tab) {
+        display: none;
+    }  
+}
+
+.menu-mobile {
+    display: none;
+
+    @include respond(tab) {
+        display: block;
+    }  
+}
+.mobile-menu {
+    background: $color-primary;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: .2rem;
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: .3s;
+
+    &.show {
+        transform: scaleY(1);
+    }
+
+    ul {
+        margin: 0;
+        padding: 0;
+
+        li {
+            list-style: none;
+
+            &.dropdown {
+                position: relative;
+
+                &:after {
+                    position: absolute;
+                    content: "\f0da";
+                    font-family: fontawesome;
+                    top: .6rem;
+                    right: 2rem;
+                    font-size: 1.8rem;
+                    color: #fff;
+                }
+
+                ul {
+                    display: none;
+                }
+
+                &.dropdown-show {
+
+                    &:after {
+                        content: "\f0d7";
+                    }
+                    ul {
+                        display: block;
+                    }
+                }
+            }
+
+            a {
+                padding: .8rem 2.5rem;
+                display: block;
+                color: #fff;
+
+                &:hover {
+                    text-decoration: none;
+                    background: $color-secondary;
+                }
+                &:focus {
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+}
+
+.icons {
+    display: flex;
+
+    &__search {
+        flex: 1;
+        height: 8.5rem;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        color: $color-primary;
+        padding: 1rem;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+    &__menu {
+        flex: 1;
+        height: 8.5rem;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        color: $color-primary;
+        visibility: hidden;
+        font-size: 2rem;
+
+        &:hover {
+            cursor: pointer;
+        }
+
+        @include respond(tab) {
+            visibility: visible;
+            padding: 1rem;
+        }  
+    }
+}
+
+

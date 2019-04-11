@@ -1,0 +1,16 @@
+html {
+    font-size: 62.5%;
+
+    @include respond(tab) {
+        font-size: 56.25%;
+    }
+}
+
+html,
+body {
+    height: 100%;
+}
+a,
+a:hover {
+    text-decoration: none;
+}

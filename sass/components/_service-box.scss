@@ -1,0 +1,76 @@
+.service__item {
+    border: $theme-border;
+    padding: 4rem 2rem;
+    text-align: center;
+    border-radius: .3rem;
+    z-index: 1;
+    position: relative;
+    background-size: cover;
+    background-position: center;
+
+    @include respond(phone-large) {
+        margin-bottom: 3rem;
+    }
+
+    &-one {
+        background-image: url(../images/hero/hero-1.jpg);
+    }
+    &-two {
+        background-image: url(../images/hero/hero-3.jpg);
+    }
+    &-three {
+        background-image: url(../images/hero/hero-3.jpg);
+    }
+
+    &:after {
+        position: absolute;
+        content: "";
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #fff;
+        z-index: -1;
+        transition: .8s;
+    }
+    &:hover {
+       
+        .service__heading {
+            color: #fff;
+        }
+        .service__details {
+            color: #fff;
+        }
+        .service__link {
+            color: $color-secondary;
+        }
+        &::after {
+            background-color: rgba($color-primary, .7);
+        }
+    }
+}
+.service__icon i {
+    height: 9rem;
+    width: 9rem;
+    line-height: 9rem;
+    background: $color-primary;
+    color: #fff;
+    font-size: 3.5rem;
+    border-radius: 50%;
+}
+.service__heading {
+    margin: 2.5rem 0;
+    position: relative;
+    padding-bottom: 1.2rem;
+
+    &:after {
+        position: absolute;
+        content: "";
+        height: 0.3rem;
+        width: 3rem;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        background: $color-secondary;
+    }
+}

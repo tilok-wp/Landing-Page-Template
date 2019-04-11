@@ -1,0 +1,62 @@
+body {
+    font-family: $body-font;
+    font-weight: 400;
+    font-size: 1.5rem;
+    line-height: 1.7;
+    color: $body-font-color;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+    padding: 0;
+    font-family: $heading-font;
+    color: $heading-font-color;
+}
+span {
+    font-family: $body-font;
+    color: rgba(100, 111, 121, 0.5);
+    font-weight: 400;
+    font-style: italic;
+    font-size: 1.7rem;
+    text-transform: capitalize;
+}
+a,
+button {
+    font-family: $heading-font;
+    transition: .3s;
+    font-weight: 500;
+}
+
+button {
+    font-size: 1.6rem;
+}
+
+.heading-primary {
+    font-size: 5rem;
+    font-weight: 700;
+}
+
+.heading-secondary {
+    font-size: 3.6rem;
+    font-weight: 700;
+}
+
+.heading-tertiary {
+    font-size: 2.4rem;
+    font-weight: 700;
+}
+
+.heading-quaternary {
+    font-size: 1.8rem;
+    font-weight: 500;
+}
+.heading-samll {
+    font-size: 1.6rem;
+    font-weight: 400;
+}
+

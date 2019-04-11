@@ -1,0 +1,22 @@
+.client {
+
+    &__single {
+        padding: 1.5rem;
+        height: 15rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        &:hover img {
+            -webkit-filter: grayscale(0);
+            filter: grayscale(0);
+        }
+
+        img {
+            width: 100%;
+            -webkit-filter: grayscale(95%);
+            filter: grayscale(95%);
+            transition: .3s;
+        }
+    }
+}

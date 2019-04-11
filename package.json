@@ -1,0 +1,14 @@
+{
+  "name": "quickstart",
+  "version": "1.0.0",
+  "description": "Quickstrat pack for front-end development",
+  "main": "index.js",
+  "scripts": {
+    "compile:sass": "node-sass sass/main.scss assets/css/main.css -w"
+  },
+  "author": "Biswajit Adhikary",
+  "license": "ISC",
+  "devDependencies": {
+    "node-sass": "^4.10.0"
+  }
+}

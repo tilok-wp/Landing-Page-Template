@@ -1,0 +1,33 @@
+
+@import "abstracts/functions";
+@import "abstracts/mixing";
+@import "abstracts/variables";
+
+@import "base/base";
+@import "base/animations";
+@import "base/typography";
+@import "base/utilities";
+
+@import "components/preloder";
+@import "components/search";
+@import "components/button";
+@import "components/hero";
+@import "components/section-heading";
+@import "components/service-box";
+@import "components/feature-box";
+@import "components/team-box";
+@import "components/client-box";
+@import "components/contact-form";
+@import "components/blog-box";
+@import "components/other";
+
+@import "layout/header";
+@import "layout/service";
+@import "layout/blog";
+@import "layout/about";
+@import "layout/team";
+@import "layout/contact";
+@import "layout/client";
+@import "layout/footer";
+
+@import "page/home";

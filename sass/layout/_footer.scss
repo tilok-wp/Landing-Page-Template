@@ -1,0 +1,148 @@
+.footer {
+    color: $soft-font-color;
+
+    &__top {
+        padding: $section-padding;
+        background-image: url(../images/hero/hero-3.jpg);
+        background-size: cover;
+        background-position: center;
+        position: relative;
+        z-index: 1;
+        padding-bottom: 7.5rem;
+
+        &:after {
+            position: absolute;
+            content: "";
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0,0 , .7);
+            z-index: -1;
+        }
+    }
+
+    &__item {
+        padding: 0 1rem;
+
+        @include respond(tab) {
+            padding: 0;
+            margin-bottom: 3.5rem;
+        }
+
+        &-details {
+            padding: 0;
+        }
+
+        &-links {
+            padding-left: 5rem;
+
+            @include respond(tab) {
+                padding-left: 0;
+            }
+        }
+
+        ul {
+            margin: 0;
+            padding: 0;
+
+            li {
+                list-style: none;
+                margin-bottom: .5rem;
+
+                a {
+                    color: $soft-font-color;
+                    transition: .3s;
+
+                    &:hover {
+                        text-decoration: none;
+                        color: #fff;
+                    }
+                }
+            }
+        }
+    }
+    &__logo {
+        height: 4rem;
+        margin-bottom: 2.5rem;
+    }
+    &__address {
+        &-title {
+            color: #fff;
+            margin-bottom: .5rem;
+        }
+        a {
+            color: #D0D3D9;
+            font-weight: normal;
+        }    
+    }
+    &__heading {
+        color: #fff;
+        margin-bottom: 2.5rem;
+        padding-bottom: 1.5rem;
+        position: relative;
+
+        &:after {
+            position: absolute;
+            content: "";
+            height: 0.3rem;
+            width: 5rem;
+            bottom: 0;
+            left: 0;
+            background: $color-primary;
+        }
+    }
+    &__posts-item {
+        margin-bottom: 2rem;
+
+        a {
+            margin-bottom: 1rem;
+            display: inline-block;
+
+            &:hover {
+                text-decoration: none;
+            }
+
+            h3 {
+                color: $soft-font-color;
+            }
+        }
+        i {
+            color: $color-primary;
+            margin-right: .5rem;
+        }
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    &__subscribe {
+
+        input.form-control {
+            background: transparent;
+            border-radius: 0;
+            border: $theme-border;
+            box-shadow: none;
+            color: #fff;
+            padding: 2rem 1.5rem;
+            margin-top: 1.5rem;
+        }
+        input.subscribe-submit {
+            width: 100%;
+            border-radius: 0;
+            margin-top: 1rem;
+        }
+    }
+
+    &__bottom {
+        padding: 1.8rem;
+        text-align: center;
+        color: #fff;
+        background: $color-primary;
+
+        p {
+            margin: 0;
+        }
+    }
+}

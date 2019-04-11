@@ -1,0 +1,32 @@
+.contact {
+    
+    &__form {
+        margin-bottom: 1rem;
+
+        input {
+            border-radius: 0;
+            margin-bottom: 1.5rem;
+            height: 4rem;
+
+            &:focus {
+                outline: none;
+                box-shadow: none;
+            }
+        }
+        input.button-primary {
+            padding: 0;
+            width: 100%;
+            text-transform: uppercase;
+        }
+        select {
+            border-radius: 0;
+            margin-bottom: 1.5rem;
+            height: 4rem;
+
+            &:focus {
+                outline: none;
+                box-shadow: none;
+            }
+        }
+    }
+}

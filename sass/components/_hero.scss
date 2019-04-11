@@ -1,0 +1,180 @@
+.hero {
+    height: calc(100% - 4.2rem);
+
+    .carousel,
+    .carousel-inner,
+    .item,
+    .hero__container {
+        height: 100%;
+    }
+
+    .carousel-inner .item {
+
+        &__image {
+            position: absolute;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+
+            &:after {
+                position: absolute;
+                content: "";
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: rgba(0, 0, 0, .5);
+                z-index: -1;
+            }
+        }
+
+        .hero__container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 2;
+        }
+    }
+
+    &__caption {
+        display: flex;
+        height: 100%;
+        align-items: center;
+    }
+    &__caption-text {
+        flex-basis: 75%;
+
+        @include respond(phone-large) {
+            flex-basis: 95%;
+        }
+    }
+    &__heading {
+        color: #fff;
+        -webkit-animation: .8s ease-in-out 0s normal none 1 running fadeInDown;
+        animation: .8s ease-in-out 0s normal none 1 running fadeInDown;
+        text-transform: capitalize;
+
+        @include respond(tab) {
+            font-size: 3.5rem;
+        } 
+        @include respond(phone-large) {
+            font-size: 2.5rem;
+        }
+    }
+    &__heading-two {
+        font-size: 9rem;
+        -webkit-animation: 1.2s ease-in-out 0s normal none 1 running heroSlideLaft;
+        animation: 1.2s ease-in-out 0s normal none 1 running heroSlideLaft;
+        color: #fff;
+
+        @include respond(tab) {
+            font-size: 6rem;
+        } 
+        @include respond(phone-large) {
+            font-size: 4.5rem;
+        }
+    }
+    &__button {
+        margin-top: 2.5rem;
+        -webkit-animation: .8s ease-in-out 0s normal none 1 running fadeInUp;
+        animation: .8s ease-in-out 0s normal none 1 running fadeInUp;
+    }
+    .carousel-indicators {
+        position: absolute;
+        left: 0;
+        right: 0;
+        width: 100%;
+        margin: 0;
+        bottom: 0;
+        display: flex;
+        background: RGBA( 0, 0, 0, .4);
+        height: 8.5rem;
+
+        li {
+            flex: 1;
+            height: auto;
+            width: auto;
+            border-radius: 0;
+            border: none;
+            margin: 0;
+            text-indent: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-right: $soft-border;
+
+            &:last-child {
+                border: none;
+            }
+
+            &.active {
+                background: transparent;
+                text-indent: 0;
+                position: relative;
+
+                &:after {
+                    position: absolute;
+                    content: "";
+                    content: "\f0d7";
+                    font-family: fontawesome;
+                    color: rgba($color-primary, .9);
+                    top: -.5rem;
+                    transform: rotate(180deg);
+                    line-height: 0;
+                    font-size: 2.5rem;
+                }
+            }
+        }
+    }
+}
+.indicators-list {
+
+    span {
+        color: #eee;
+        font-weight: normal;
+        font-size: 1.3rem;
+        margin-bottom: .3rem;
+    }
+    h3 {
+        color: #fff;
+        font-size: 1.8rem;
+        font-weight: normal;
+        text-transform: capitalize;
+    }
+}
+
+// Fade effects
+.carousel-fade .carousel-inner .item {
+    -webkit-transition-property: opacity;
+    transition-property: opacity;
+}
+.carousel-fade .carousel-inner .item,
+.carousel-fade .carousel-inner .active.left,
+.carousel-fade .carousel-inner .active.right {
+    opacity: 0;
+}
+.carousel-fade .carousel-inner .active,
+.carousel-fade .carousel-inner .next.left,
+.carousel-fade .carousel-inner .prev.right {
+    opacity: 1;
+}
+.carousel-fade .carousel-inner .next,
+.carousel-fade .carousel-inner .prev,
+.carousel-fade .carousel-inner .active.left,
+.carousel-fade .carousel-inner .active.right {
+    left: 0;
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+}
+.carousel-fade .carousel-control {
+    z-index: 2;
+}
+
+  
